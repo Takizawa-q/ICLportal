@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICL Системные Технологии</title>
+    <link rel="stylesheet" href="{% static 'iclmenu/main.css' %}">
+    <link rel="stylesheet" href="{% static 'iclmenu/sidebar.css' %}">
+</head>
+<body>
+    <div class="sidebar">
+        
+        <div class="sidebar__top">
+            <img src="https://icl.ru/local/styles/img/svg/logo-top.svg" alt="" class="sidebar__logo"">
+            <div class="sidebar__logo-text">ICL</div>
+        </div>
+        <div class="sidebar__middle">
+            <button class="sidebar__main-button">🏠 Главная</button>
+            <button class="sidebar__structure-button">⚙️ Структура</button>
+        </div>
+
+        <div class="sidebar__bottom">ICL Системные технологии</div>
+    </div>
+    <div class="main">
+        <div class="main__column-1">
+            <div  class="category-header">О компании</div>
+            <div class="main__about-company">
+                {% for about in abouts %}
+                    <div href="" class="main__about-company link">
+                        {{about.cennosti}}
+                    </div>
+                    <div href="" class="main__about-company link">
+                        {{about.structure}}
+                    </div>
+                    <div href="" class="main__about-company link">
+                        {{about.history}}
+                    </div>
+                {% endfor %}
+            </div>
+            
+            <div class="main__lessons">
+                <div class="category-header">Обучение</div>
+                <div class="main_lessons-content">
+                    {% for learning in learnings %}
+                        <div class="main_lessons-category flex-col">
+                            <div style="font-weight: 600; font-style: italic; font-size:  1.2em;">{{learning.title}}</div>
+                            <a href={{learning.link_1_href}} class="main__lessons link">{{learning.link_1_view}}</a>
+                            <a href={{learning.link_2_href}} class="main__lessons link">{{learning.link_2_view}}</a>
+                            <a href={{learning.link_3_href}} class="main__lessons link">{{learning.link_3_view}}</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            
+            <div class="main__links">
+                <div class="category-header">Ссылки</div>
+                <div class="main__links-content">
+                    {% for link in links %}
+                    <div class="main_links-category flex-col">
+                        <div style="font-weight: 600; font-style: italic; font-size:  1.2em;">{{link.title}}</div>
+                        <a href={{link.link_1_href}} class="main__lessons link">{{link.link_1_view}}</a>
+                        <a href={{link.link_2_href}} class="main__lessons link">{{link.link_2_view}}</a>
+                        <a href={{link.link_3_href}} class="main__lessons link">{{link.link_3_view}}</a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="main__column-2">
+            <div class="category-header">Инструкции</div>
+            
+            <div class="instructions">
+                {% for instruction in instructions %}
+                <div class="instruction flex-col">
+                    <div style="font-weight: 600; font-style: italic; font-size:  1.2em;">{{instruction.title}}</div>
+                    <a href={{instruction.link_1_href}} class="link">{{instruction.link_1_view}}</a>
+                    <a href={{instruction.link_2_href}} class="link">{{instruction.link_2_view}}</a>
+                    <a href={{instruction.link_3_href}} class="link">{{instruction.link_3_view}}</a>
+                    <a href={{instruction.link_4_href}} class="link">{{instruction.link_4_view}}</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

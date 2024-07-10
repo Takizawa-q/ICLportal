@@ -1,0 +1,95 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration:none;        
+}
+
+:root {
+    --logo-color: white;
+    --icl-color: #591d1d;
+}
+
+button {
+    border: none;
+    color: white;
+    background-color: var(--icl-color);
+    width: 100%;
+    cursor: pointer;
+}
+
+body {
+    background-color: #591d1d30;
+}
+ 
+.main {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    /* grid-template-rows: 1fr 1fr; */
+    padding: 90px;
+    padding-bottom: 0px;
+    top: 0;
+    left: 200px;
+    width: calc(100% - 200px);
+}
+
+.main__column-1 {
+    display: grid;
+
+    .main__about-company {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main_lessons-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .main__links-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-bottom: 100px;
+    }
+
+}
+
+.link {
+    padding-left: 10px;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.category-header {
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+.main_lessons-category, .main_links-category {
+    margin-top: 5px;
+    padding-left: 30px;
+}
+
+.main__about-company {
+    padding-left: 20px;
+    padding-top: 5px;
+    display: grid;
+}
+
+
+.instructions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.instruction {
+    padding: 20px;
+}
+
